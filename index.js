@@ -13,6 +13,7 @@ form.addEventListener("submit" ,async (event) => {
         }
         catch(error){
             console.error(error);
+            displayError.textContent = "Check Name of the pokemon enterd"
         }
     }
     else{
