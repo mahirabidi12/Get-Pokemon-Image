@@ -12,7 +12,6 @@ form.addEventListener("submit" ,async (event) => {
             displayData(data);
         }
         catch(error){
-            displayError.textContent = "Check Name of the pokemon enterd"
             console.error(error);
         }
     }
@@ -27,6 +26,7 @@ async function getData(pokemonName) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
     if(!response.ok){
+        displayError.textContent = "Check Name of the pokemon enterd"
         throw new Error("Could not get the rigth response from API");
     }
     return await response.json();
